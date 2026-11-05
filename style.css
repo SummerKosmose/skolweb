@@ -1,0 +1,286 @@
+ 
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffdf5;
+    color: #6f00ff;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(87, 47, 125, 0.09);
+    border-bottom: 3px solid #d7f77a;
+}
+
+.logo {
+    font-family: 'Kalam', cursive;
+    font-size: 29px;
+    font-weight: 700;
+    color: #36c85a;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #443052;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #8a36d1;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 650px;
+
+    background:
+        radial-gradient(circle at 10% 15%, #f894e9 0%, transparent 27%),
+        radial-gradient(circle at 90% 80%, #83dc62 0%, transparent 30%),
+        linear-gradient(135deg, #caa8f4, #f2c9f5, #9ef1a9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.small-heading {
+    font-size: 15px;
+    letter-spacing: 7px;
+    font-weight: 700;
+    color: #43a117;
+    margin-bottom: 23px;
+}
+
+.hero h1 {
+    font-family: 'Kalam', cursive;
+    font-size: 115px;
+    line-height: 1.05;
+    font-weight: 700;
+    color: #7026b5;
+    text-shadow: 3px 4px 0px #ffffff;
+}
+
+.hero h1 span {
+    color: #68b82f;
+}
+
+.tagline {
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 15px;
+    color: #49306b;
+}
+
+.description {
+    font-size: 16px;
+    margin-top: 12px;
+    color: #665477;
+}
+
+.explore-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 38px;
+    background-color: #8435c9;
+    color: white;
+    border: 3px solid #ffffff;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 0 #59238a;
+    transition: 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #68b82f;
+    box-shadow: 0 6px 0 #427c20;
+    transform: translateY(-4px);
+}
+
+
+/* DECORATIONS */
+
+.decoration {
+    position: absolute;
+    font-size: 75px;
+    opacity: 0.9;
+}
+
+.star {
+    top: 12%;
+    left: 14%;
+    color: #ffb800;
+}
+
+.atom {
+    top: 22%;
+    right: 14%;
+    color: #58a832;
+    font-size: 95px;
+}
+
+.planet {
+    bottom: 10%;
+    left: 16%;
+    font-size: 85px;
+}
+
+.flask {
+    bottom: 13%;
+    right: 15%;
+    color: #8c36c9;
+    font-size: 85px;
+}
+
+.sparkle {
+    top: 45%;
+    right:27%;
+    color: #ffae00;
+}
+
+
+/* ABOUT SECTION */
+
+.about {
+    padding: 110px 20px;
+    background-color: #fffdf5;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.about-content {
+    max-width: 850px;
+}
+
+.section-label {
+    color: #62a837;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.about h2 {
+    font-size: 40px;
+    color: #4e286c;
+    margin-bottom: 30px;
+}
+
+.about h2 span {
+    color: #913bd0;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 2;
+    color: #665b70;
+    margin-bottom: 20px;
+}
+
+.about h3 {
+    font-family: 'Kalam', cursive;
+    font-size: 27px;
+    color: #5b9d31;
+    margin-top: 30px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #582b78;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+    border-top: 5px solid #c5ef70;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 85px;
+    }
+
+    .decoration {
+        font-size: 50px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .tagline {
+        font-size: 19px;
+    }
+
+    .about h2 {
+        font-size: 29px;
+    }
+
+    .about p {
+        font-size: 14px;
+    }
+
+    .decoration {
+        opacity: 0.4;
+    }
+
+}
