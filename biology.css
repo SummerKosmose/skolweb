@@ -1,0 +1,670 @@
+
+/* =====================================
+   BIOLOGY PAGE - CURIOUS MINDS
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* BIOLOGY HEADER */
+
+.biology-header {
+    min-height: 340px;
+    margin: 25px 5%;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #d8f4c5,
+        #c8efd8,
+        #d8e8b8
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+    padding: 45px 20px;
+}
+
+.biology-header h1 {
+    font-family: 'Kalam', cursive;
+    font-size: clamp(4rem, 10vw, 7rem);
+    color: #398044;
+    margin: 0;
+    z-index: 2;
+}
+
+.biology-header p {
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.8;
+    z-index: 2;
+    margin-top: 0;
+}
+
+.biology-small {
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #4e8d47;
+    z-index: 2;
+}
+
+
+/* HEADER DECORATIONS */
+
+.biology-decoration {
+    position: absolute;
+    font-size: 95px;
+    opacity: 0.8;
+}
+
+.leaf-one {
+    top: 25px;
+    left: 9%;
+    animation: biologyFloat 4s ease-in-out infinite;
+}
+
+.dna-one {
+    bottom: 30px;
+    right: 12%;
+    animation: biologyFloat 3.5s ease-in-out infinite;
+}
+
+.flower-one {
+    top: 35px;
+    right: 12%;
+    animation: biologyFloat 4.5s ease-in-out infinite;
+}
+
+.leaf-two {
+    bottom: 25px;
+    left: 12%;
+    animation: biologyFloat 3s ease-in-out infinite;
+}
+
+@keyframes biologyFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-13px) rotate(10deg);
+    }
+}
+
+
+/* INTRODUCTION */
+
+.biology-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 55px auto 35px;
+    padding: 0 20px;
+}
+
+.biology-intro h2 {
+    color: #398044;
+    font-family: 'Kalam', cursive;
+    font-size: 32px;
+}
+
+.biology-intro p {
+    line-height: 1.8;
+}
+
+
+/* ARTICLE LAYOUT */
+
+.biology-articles {
+    max-width: 1150px;
+    margin: auto;
+    padding: 10px 25px 70px;
+}
+
+.biology-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    padding: 45px 0;
+    border-bottom: 2px dashed #cce3c3;
+}
+
+
+/* ALTERNATING ARTICLE LAYOUT */
+
+.biology-article.reverse .biology-text {
+    order: 2;
+}
+
+.biology-article.reverse .biology-visual {
+    order: 1;
+}
+
+
+/* ARTICLE TEXT */
+
+.biology-number {
+    color: #68a936;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.biology-text h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 32px;
+    color: #398044;
+    margin: 8px 0 15px;
+}
+
+.biology-text p {
+    line-height: 1.85;
+    font-size: 15px;
+}
+
+
+/* READ MORE */
+
+.biology-more {
+    display: none;
+    animation: biologyAppear 0.4s ease;
+}
+
+.biology-more.show {
+    display: block;
+}
+
+@keyframes biologyAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.biology-read-more {
+    display: inline-block;
+    color: #398044;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #398044;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.biology-read-more:hover {
+    color: #24602f;
+    border-color: #24602f;
+}
+
+
+/* ARTICLE VISUALS */
+
+.biology-visual {
+    min-height: 270px;
+    border-radius: 25px;
+    background: #e2f2d9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.cell-background {
+    background: #e4e5ff;
+}
+
+.plant-background {
+    background: #fff0c9;
+}
+
+.body-background {
+    background: #f8dfe9;
+}
+
+
+/* =====================================
+   VISUAL 1: THE WORLD OF LIFE
+===================================== */
+
+.life-scene {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.life-sun {
+    font-size: 55px;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    animation: sunGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes sunGlow {
+    from {
+        transform: scale(0.95);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.life-tree {
+    font-size: 100px;
+    position: absolute;
+    bottom: 25px;
+    left: 25%;
+    animation: treeSway 3s ease-in-out infinite alternate;
+}
+
+@keyframes treeSway {
+    from {
+        transform: rotate(-3deg);
+    }
+
+    to {
+        transform: rotate(3deg);
+    }
+}
+
+.life-butterfly {
+    font-size: 45px;
+    position: absolute;
+    top: 70px;
+    left: 65%;
+    animation: butterflyFly 4s ease-in-out infinite;
+}
+
+@keyframes butterflyFly {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-35px, -30px) rotate(15deg);
+    }
+}
+
+.life-flower {
+    font-size: 45px;
+    position: absolute;
+    bottom: 30px;
+    right: 15%;
+}
+
+
+/* =====================================
+   VISUAL 2: THE CELL
+===================================== */
+
+.cell-scene {
+    width: 230px;
+    height: 210px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-wall {
+    width: 210px;
+    height: 155px;
+    background: #b4a9ef;
+    border-radius: 50%;
+    position: absolute;
+    transform: rotate(-10deg);
+}
+
+.cell-body {
+    width: 190px;
+    height: 140px;
+    background: #d4ccff;
+    border: 4px solid #8875c7;
+    border-radius: 50%;
+    position: relative;
+    animation: cellPulse 3s ease-in-out infinite;
+}
+
+@keyframes cellPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+.cell-nucleus {
+    font-size: 40px;
+    position: absolute;
+    top: 45px;
+    left: 75px;
+    animation: nucleusPulse 2s infinite alternate;
+}
+
+@keyframes nucleusPulse {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.cell-part {
+    font-size: 20px;
+    position: absolute;
+}
+
+.part-one {
+    top: 15px;
+    left: 35px;
+}
+
+.part-two {
+    top: 20px;
+    right: 35px;
+}
+
+.part-three {
+    bottom: 15px;
+    left: 40px;
+}
+
+.part-four {
+    bottom: 15px;
+    right: 35px;
+}
+
+.cell-label {
+    position: absolute;
+    bottom: -8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #62519c;
+}
+
+
+/* =====================================
+   VISUAL 3: PHOTOSYNTHESIS
+===================================== */
+
+.photosynthesis-scene {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-sun {
+    font-size: 55px;
+    position: absolute;
+    top: 15px;
+    left: 18%;
+    animation: sunGlow 2s infinite alternate;
+}
+
+.photo-sun-rays {
+    width: 110px;
+    height: 110px;
+    border: 3px dashed #e6ad25;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 12%;
+    animation: raysRotate 12s linear infinite;
+}
+
+@keyframes raysRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.photo-plant {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 180px;
+}
+
+.photo-stem {
+    width: 8px;
+    height: 115px;
+    background: #4d9b42;
+    position: absolute;
+    bottom: 0;
+    left: 65px;
+    border-radius: 10px;
+}
+
+.photo-leaf {
+    font-size: 55px;
+    position: absolute;
+}
+
+.left-leaf {
+    top: 65px;
+    left: 8px;
+    transform: rotate(-30deg);
+}
+
+.right-leaf {
+    top: 35px;
+    right: 0;
+    transform: rotate(30deg) scaleX(-1);
+}
+
+.photo-flower {
+    font-size: 48px;
+    position: absolute;
+    top: 0;
+    left: 43px;
+    animation: flowerSway 2s ease-in-out infinite alternate;
+}
+
+@keyframes flowerSway {
+    from {
+        transform: rotate(-8deg);
+    }
+
+    to {
+        transform: rotate(8deg);
+    }
+}
+
+.photo-label {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #557d38;
+}
+
+
+/* =====================================
+   VISUAL 4: HUMAN BODY
+===================================== */
+
+.body-scene {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-person {
+    font-size: 130px;
+    position: absolute;
+    animation: bodyFloat 3s ease-in-out infinite;
+}
+
+@keyframes bodyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.body-heart {
+    font-size: 27px;
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 4px);
+    animation: heartBeat 1s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.25);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.2);
+    }
+}
+
+.body-brain {
+    font-size: 28px;
+    position: absolute;
+    top: 53px;
+    left: calc(50% - 15px);
+}
+
+.body-lungs {
+    font-size: 25px;
+    position: absolute;
+    top: 118px;
+    left: calc(50% - 15px);
+}
+
+.body-caption {
+    position: absolute;
+    bottom: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a64e72;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.biology-footer {
+    text-align: center;
+    background: #398044;
+    color: white;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 750px) {
+
+    .biology-article {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .biology-article.reverse .biology-text,
+    .biology-article.reverse .biology-visual {
+        order: initial;
+    }
+
+    .biology-visual {
+        min-height: 230px;
+    }
+
+    .biology-header {
+        margin: 15px;
+    }
+
+    .biology-header h1 {
+        font-size: 60px;
+    }
+
+    .biology-header p {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .biology-articles {
+        padding: 10px 18px 50px;
+    }
+
+    .biology-text h2 {
+        font-size: 28px;
+    }
+
+    .biology-decoration {
+        opacity: 0.4;
+    }
+
+    .biology-small {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+}
+
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}

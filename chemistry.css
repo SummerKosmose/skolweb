@@ -1,0 +1,542 @@
+
+/* GENERAL */
+.chem-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 18px;
+    flex-wrap: wrap;
+}
+
+.chem-nav a {
+    color: #563078;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.chem-nav a:hover,
+.chem-nav a.active {
+    color: #8a43b5;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* HEADER */
+.chem-header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 75px 20px 85px;
+    background: linear-gradient(135deg, #f4dafa, #e8d5ff, #f8e7c9);
+    size: 1000%;
+}
+
+.chem-small-heading {
+    color: #76508e;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.chem-header h1 {
+    color: #7026a5;
+    font-size: clamp(48px, 9vw, 90px);
+    letter-spacing: 5px;
+    margin: 12px 0;
+    font-weight: 900;
+}
+
+.chem-tagline {
+    color: #634477;
+    font-size: 18px;
+}
+
+.chem-decoration {
+    position: absolute;
+    font-size: 95px;
+    animation: chem-float 4s ease-in-out infinite;
+}
+
+.decor-one {
+    left: 12%;
+    top: 25%;
+}
+
+.decor-two {
+    right: 13%;
+    top: 22%;
+    animation-delay: 1s;
+}
+
+.decor-three {
+    left: 25%;
+    bottom: 15%;
+    color: #a36bc2;
+}
+
+.decor-four {
+    right: 25%;
+    bottom: 18%;
+    animation-delay: 2s;
+}
+
+@keyframes chem-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+/* MAIN CONTAINER */
+.chem-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 40px 25px;
+}
+
+.chem-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto 65px;
+}
+
+.chem-intro h2 {
+    color: #7026a5;
+    font-size: 32px;
+}
+
+.chem-intro p {
+    color: #555;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+/* ARTICLE LAYOUT */
+.chem-article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+    margin: 65px 0;
+}
+
+.chem-article.reverse {
+    flex-direction: row-reverse;
+}
+
+.chem-content {
+    flex: 1;
+}
+
+.chem-number {
+    color: #8b58a8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.chem-content h2 {
+    color: #7026a5;
+    font-size: 29px;
+    margin: 12px 0;
+}
+
+.chem-content p {
+    color: #555;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.chem-extra {
+    display: none;
+}
+
+.chem-extra.show {
+    display: block;
+    animation: chem-appear 0.4s ease;
+}
+
+@keyframes chem-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chem-read-more {
+    display: inline-block;
+    color: #478b43;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.chem-read-more:hover {
+    color: #7026a5;
+    transform: translateX(5px);
+}
+
+/* VISUAL PANELS */
+.chem-visual {
+    flex: 1;
+    min-height: 290px;
+    border-radius: 25px;
+    background: #f1e5fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.world-label {
+    color: #73528b;
+    font-size: 13px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* ARTICLE 1: CHEMISTRY WORLD */
+.chemistry-world {
+    background: linear-gradient(145deg, #e9d8fa, #d5f0dc);
+}
+
+.chemistry-flask {
+    font-size: 100px;
+    animation: flask-bob 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes flask-bob {
+    0%, 100% {
+        transform: rotate(-5deg) translateY(0);
+    }
+    50% {
+        transform: rotate(5deg) translateY(-10px);
+    }
+}
+
+.floating-bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: #ffffff80;
+    animation: bubble-rise 4s infinite ease-in-out;
+}
+
+.bubble-one {
+    width: 25px;
+    height: 25px;
+    left: 20%;
+    bottom: 10%;
+}
+
+.bubble-two {
+    width: 16px;
+    height: 16px;
+    right: 22%;
+    bottom: 20%;
+    animation-delay: 1s;
+}
+
+.bubble-three {
+    width: 35px;
+    height: 35px;
+    right: 18%;
+    top: 15%;
+    animation-delay: 2s;
+}
+
+@keyframes bubble-rise {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-35px);
+        opacity: 1;
+    }
+}
+
+/* ARTICLE 2: ATOM */
+.atom-visual {
+    background: #e5e0fa;
+}
+
+.atom {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nucleus {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #8e45b6;
+    box-shadow: 0 0 20px #b889e8;
+    z-index: 2;
+}
+
+.atom-orbit {
+    position: absolute;
+    width: 170px;
+    height: 65px;
+    border: 2px solid #9a68c2;
+    border-radius: 50%;
+}
+
+.orbit-one {
+    transform: rotate(0deg);
+}
+
+.orbit-two {
+    transform: rotate(60deg);
+}
+
+.orbit-three {
+    transform: rotate(-60deg);
+}
+
+.electron {
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    background: #68b82f;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+/* ARTICLE 3: MATTER */
+.matter-visual {
+    background: #e0f1df;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.matter-card {
+    width: 29%;
+    min-width: 100px;
+    min-height: 145px;
+    background: #ffffffb8;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 5px 15px #477b3920;
+}
+
+.matter-card b {
+    color: #527b43;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.matter-card small {
+    color: #666;
+    font-size: 10px;
+    margin-top: 6px;
+}
+
+.matter-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.matter-dots span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #8a54c0;
+}
+
+.element-dots span {
+    background: #8a54c0;
+}
+
+.molecule {
+    display: flex;
+    align-items: center;
+}
+
+.molecule span {
+    width: 16px;
+    height: 16px;
+    background: #68b82f;
+    border-radius: 50%;
+    margin: -2px;
+}
+
+.molecule span:nth-child(2) {
+    width: 23px;
+    height: 23px;
+    background: #e99a53;
+}
+
+.mixture-dots span:nth-child(even) {
+    background: #e99a53;
+}
+
+/* ARTICLE 4: PH SCALE */
+.ph-visual {
+    background: #f9e6ef;
+}
+
+.ph-visual h3 {
+    color: #7026a5;
+    margin-top: 0;
+}
+
+.ph-scale {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ph-scale span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.ph-scale span:nth-child(-n+3) {
+    background: #d34d65;
+}
+
+.ph-scale span:nth-child(n+4):nth-child(-n+6) {
+    background: #e68a55;
+}
+
+.ph-scale span:nth-child(7) {
+    background: #d6b84a;
+}
+
+.ph-scale span:nth-child(8) {
+    background: #5aab72;
+}
+
+.ph-scale span:nth-child(n+9) {
+    background: #5988c5;
+}
+
+.ph-labels {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #694a78;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.ph-examples {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 30px;
+    margin-top: 18px;
+}
+
+/* DIVIDER */
+.chem-divider {
+    text-align: center;
+    color: #9b72b8;
+    letter-spacing: 8px;
+    margin: 50px 0;
+}
+
+/* FOOTER */
+.chem-footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #eee0f8;
+    color: #65427d;
+}
+
+.chem-footer p {
+    font-size: 16px;
+}
+
+.chem-footer span {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+@media (max-width: 750px) {
+    .chem-nav {
+        gap: 15px;
+    }
+
+    .chem-article,
+    .chem-article.reverse {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .chem-content,
+    .chem-visual {
+        width: 100%;
+    }
+
+    .chem-visual {
+        min-height: 260px;
+    }
+
+    .chem-header {
+        padding: 65px 15px;
+    }
+
+    .chem-header h1 {
+        font-size: 48px;
+    }
+
+    .chem-decoration {
+        font-size: 25px;
+    }
+
+    .matter-visual {
+        gap: 6px;
+    }
+
+    .matter-card {
+        min-width: 85px;
+    }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    .chem-header *,
+    .chem-visual *,
+    .chem-extra.show {
+        animation: none !important;
+    }
+}

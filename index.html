@@ -1,0 +1,243 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sci Web <3</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Handwritten font -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .hero h1 {
+            white-space: nowrap;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">Sci Web</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="physics.html">Physics</a></li>
+            <li><a href="chemistry.html">Chemistry</a></li>
+            <li><a href="biology.html">Biology</a></li>
+            <li><a href="astronomy.html">Astronomy</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+             
+
+            <h1 class="sciweb">Sci Web &nbsp;<span><3</span></h1>
+
+            <p class="tagline">
+                Science is everywhere, and it's waiting for you.....<br>
+                
+            </p>
+
+            <p class="description">
+                The world is full of questions. Let's find the answers together!
+            </p>
+
+             <a href="#" class="explore-button" id="exploreButton">
+    Let's Explore ! 
+</a>
+
+        </div>
+
+        
+
+    </section>
+
+
+    <!-- SUBJECTS SECTION -->
+
+    <section class="subjects">
+
+        <div class="subjects-heading">
+
+            <p class="section-label">PICK YOUR ADVENTURE</p>
+
+            <h2>What are you curious about?</h2>
+
+            <p>Four worlds of science, waiting to be explored!</p>
+
+        </div>
+
+
+        <div class="subject-container">
+
+            <!-- PHYSICS -->
+
+            <a href="physics.html" class="subject-card physics">
+
+                <div class="subject-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="Apple">
+                </div>
+
+                <h3>Physics</h3>
+
+                <p>
+                    Discover the forces, energy and mysteries
+                    that make our universe work.
+                </p>
+
+                <span>Explore Physics ↗</span>
+
+            </a>
+
+
+            <!-- CHEMISTRY -->
+
+            <a href="chemistry.html" class="subject-card chemistry">
+
+                <div class="subject-image">
+                    <img src="test-tube.png" alt="Chemistry test tube">
+                </div>
+
+                <h3>Chemistry</h3>
+
+                <p>
+                    Explore atoms, molecules and the amazing
+                    reactions happening all around us.
+                </p>
+
+                <span>Explore Chemistry ↗</span>
+
+            </a>
+
+
+            <!-- BIOLOGY -->
+
+            <a href="biology.html" class="subject-card biology">
+
+                <div class="subject-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3069/3069172.png" alt="Biology illustration">
+                </div>
+
+                <h3>Biology</h3>
+
+                <p>
+                    Meet fascinating living things, from tiny
+                    cells to enormous ecosystems.
+                </p>
+
+                <span>Explore Biology ↗</span>
+
+            </a>
+    
+            <!-- FUN FACTS CARD -->
+
+<a href="funfacts.html" class="subject-card funfacts">
+
+    <div class="subject-image">
+        <img src="Gemini_Generated_Image_a93u9ga93u9ga93u.png" alt="Fun Facts">
+    </div>
+
+    <h3>Fun Facts</h3>
+
+    <p>
+        Discover fascinating facts, surprising discoveries
+        and little mysteries about our world!
+    </p>
+
+    <span>Explore More →</span>
+
+</a>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <p class="section-label">GET TO KNOW US</p>
+
+            <h2>What is <span>Sci Web?</span></h2>
+
+            <p>
+                Sci Web is a place where curiosity meets discovery!
+                We believe that learning science should be accessible
+                to everyone, regardless of where they come from or
+                what resources they have.
+            </p>
+
+            <p>
+                From the tiniest microorganisms to the largest galaxies,
+                there is so much to discover about the world around us.
+                Our goal is to make exploring these wonders simple,
+                interesting and fun.
+            </p>
+
+            <p>
+                Whether you are a student, a young explorer, or simply
+                someone who loves asking questions, this is a place for you.
+                No expensive textbooks, no complicated explanations —
+                just curiosity and a willingness to learn!
+            </p>
+
+            <h3>
+                Because every great discovery begins with a question.
+            </h3>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        Made for curious minds, everywhere. ✦
+    </footer>
+
+<script>
+
+const pages = [
+    "physics.html",
+    "chemistry.html",
+    "biology.html",
+    "astronomy.html",
+    "funfacts.html"
+];
+
+document.getElementById("exploreButton").addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    const randomPage = pages[Math.floor(Math.random() * pages.length)];
+
+    window.location.href = randomPage;
+
+});
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,1184 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics | Curious Minds</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fffdf5;
+            color: #30213d;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 18px 6%;
+            background: white;
+        }
+
+        .logo {
+            font-family: 'Kalam', cursive;
+            font-size: 25px;
+            font-weight: bold;
+            color: #7026b5;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: #30213d;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #7026b5;
+        }
+
+        /* PHYSICS HERO */
+
+        .physics-header {
+            min-height: 340px;
+            margin: 25px 5%;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #e7d1ff, #c9f2b8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 45px 20px;
+        }
+
+        .physics-header h1 {
+            font-family: 'Kalam', cursive;
+            font-size: clamp(4rem, 10vw, 7rem);
+            color: #7026b5;
+            margin: 0;
+            z-index: 2;
+        }
+
+        .physics-header p {
+            max-width: 600px;
+            font-size: 17px;
+            z-index: 2;
+            margin-top: 0;
+        }
+
+        .header-small {
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #5c8c32;
+            z-index: 2;
+        }
+
+        /* DECORATIONS */
+
+        .header-decoration {
+            position: absolute;
+            font-size: 90px;
+            opacity: 0.8;
+        }
+
+        .deco-atom {
+            top: 25px;
+            left: 9%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .deco-star {
+            bottom: 30px;
+            right: 12%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .deco-planet {
+            top: 35px;
+            right: 12%;
+            animation: float 4.5s ease-in-out infinite;
+        }
+
+        .deco-light {
+            bottom: 25px;
+            left: 12%;
+            animation: float 3.5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-13px) rotate(10deg);
+            }
+        }
+
+        /* INTRO */
+
+        .physics-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 55px auto 35px;
+            padding: 0 20px;
+        }
+
+        .physics-intro h2 {
+            color: #7026b5;
+            font-family: 'Kalam', cursive;
+            font-size: 32px;
+        }
+
+        .physics-intro p {
+            line-height: 1.8;
+        }
+
+        /* ARTICLE LAYOUT */
+
+        .articles {
+            max-width: 1150px;
+            margin: auto;
+            padding: 10px 25px 70px;
+        }
+
+        .article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+            padding: 45px 0;
+            border-bottom: 2px dashed #dfd0ef;
+        }
+
+        .article.reverse .article-text {
+            order: 2;
+        }
+
+        .article.reverse .article-visual {
+            order: 1;
+        }
+
+        .article-number {
+            color: #68a936;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .article-text h2 {
+            font-family: 'Kalam', cursive;
+            font-size: 32px;
+            color: #7026b5;
+            margin: 8px 0 15px;
+        }
+
+        .article-text p {
+            line-height: 1.85;
+            font-size: 15px;
+        }
+
+        .article-visual {
+            min-height: 270px;
+            border-radius: 25px;
+            background: #eee3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* READ MORE */
+
+        .more-text {
+            display: none;
+            animation: appear 0.4s ease;
+        }
+
+        .more-text.show {
+            display: block;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #7026b5;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #7026b5;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            color: #4f1887;
+            border-color: #4f1887;
+        }
+
+        /* VISUAL 1: PHYSICS ORBIT */
+
+        .orbit-scene {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .orbit-circle {
+            width: 210px;
+            height: 95px;
+            border: 3px solid #7026b5;
+            border-radius: 50%;
+            position: absolute;
+            transform: rotate(-35deg);
+        }
+
+        .orbit-circle.second {
+            transform: rotate(35deg);
+            border-color: #68a936;
+        }
+
+        .orbit-center {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #ffb800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            z-index: 2;
+        }
+
+         .orbit-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #e47ac6;
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+    animation: orbitMove 4s linear infinite;
+}
+       
+ @keyframes orbitMove {
+            from {
+                transform: rotate(0deg) translateX(85px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(85px) rotate(-360deg);
+            }
+        }
+        /* VISUAL 2: FIRST LAW */
+
+        .inertia-scene {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inertia-ball {
+            font-size: 60px;
+            position: absolute;
+            animation: ballMove 3s ease-in-out infinite;
+        }
+
+        @keyframes ballMove {
+            0%, 15% {
+                transform: translateX(-75px);
+            }
+            45%, 100% {
+                transform: translateX(75px);
+            }
+        }
+
+        .inertia-ground {
+            width: 75%;
+            height: 7px;
+            background: #7026b5;
+            position: absolute;
+            bottom: 55px;
+            border-radius: 10px;
+        }
+
+        .inertia-caption {
+            position: absolute;
+            bottom: 20px;
+            color: #7026b5;
+            font-weight: bold;
+        }
+
+        /* VISUAL 3: SECOND LAW */
+
+        .force-scene {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+         .force-box {
+    width: 85px;
+    height: 75px;
+    background: #ffb800;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    animation: boxMove 2.5s ease-in-out infinite alternate;
+}
+
+        @keyframes boxMove {
+            from {
+                transform: translateX(-45px);
+            }
+            to {
+                transform: translateX(45px);
+            }
+        }
+
+         
+
+        @keyframes arrowMove {
+            from {
+                transform: translateX(-8px);
+            }
+            to {
+                transform: translateX(10px);
+            }
+        }
+
+        .force-label {
+            position: absolute;
+            bottom: 20px;
+            font-weight: bold;
+            color: #7026b5;
+        }
+
+        /* VISUAL 4: THIRD LAW */
+
+        .rocket-scene {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rocket {
+            font-size: 70px;
+            animation: rocketMove 2.5s ease-in-out infinite;
+        }
+
+        .rocket-flame {
+            font-size: 30px;
+            position: absolute;
+            left: 25%;
+            animation: flame 0.4s infinite alternate;
+        }
+
+        @keyframes rocketMove {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(35px);
+            }
+        }
+
+        @keyframes flame {
+            from {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            background: #7026b5;
+            color: white;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+            .article {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .article.reverse .article-text,
+            .article.reverse .article-visual {
+                order: initial;
+            }
+
+            .article-visual {
+                min-height: 230px;
+            }
+
+            .physics-header {
+                margin: 15px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                margin-top: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .article-visual
+    {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                size: 1000px;
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav class="navbar">
+        <div class="logo">Curious Minds</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="physics.html">Physics</a>
+            <a href="#">Chemistry</a>
+            <a href="#">Biology</a>
+            <a href="#">Astronomy</a>
+        </div>
+    </nav>
+
+
+    <!-- PHYSICS HEADER -->
+
+    <header class="physics-header">
+
+        <div class="header-decoration deco-atom">🪄</div>
+        <div class="header-decoration deco-star">✦</div>
+        <div class="header-decoration deco-planet">🪐</div>
+        <div class="header-decoration deco-light">💡</div>
+
+        <div class="header-small">EXPLORE • EXPERIMENT • DISCOVER </div>
+
+        <h1>PHYSICS</h1>
+
+        <p>
+            Discover the rules that shape our universe.
+            From the smallest particles to the largest galaxies,
+            there's always something waiting to be explored!!!!!
+        </p>
+
+    </header>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="physics-intro">
+
+        <h2>A Little Curiosity Goes a Long Way ...</h2>
+
+        <p>
+            Why do things fall? How do cars move? What keeps the planets
+            in orbit? Physics helps us understand the world around us.
+            Let's explore some fascinating ideas, one article at a time.
+        </p>
+
+    </section>
+
+
+    <!-- ARTICLES -->
+
+    <main class="articles">
+
+
+        <!-- ARTICLE 1: WHAT IS PHYSICS -->
+
+        <section class="article">
+
+            <div class="article-text">
+
+                <div class="article-number">ARTICLE 01 • THE BASICS</div>
+
+                <h2>What Exactly Is Physics?</h2>
+
+                <p>
+                    Have you ever wondered why the sky is blue, how a
+                    rainbow forms, or why objects fall towards the ground?
+                    The answers to these questions can be found in physics!
+                </p>
+
+                <div class="more-text">
+
+                    <p>
+                        Physics is a branch of science that studies matter,
+                        energy, motion and the forces that act on objects.
+                        It helps us understand how the universe works,
+                        from tiny atoms to enormous galaxies.
+                    </p>
+
+                    <p>
+                        Physics is also a part of our everyday lives.
+                        Electricity powers our homes, sound allows us to
+                        communicate, and the laws of motion help us
+                        understand how vehicles travel. By studying physics,
+                        we learn to question, experiment and discover
+                        the science behind ordinary things.
+                    </p>
+                    <p>
+                        WANNA LEARN MORE? CLICK <a href="https://youtu.be/Y-NQOJ3Uz4w?si=4BO5M7HeM6siojNK" target="_blank">HERE</a>
+                    </p>
+                </div>
+
+                <a href="#" class="read-more">Read more →</a>
+
+            </div>
+
+
+            <div class="article-visual">
+
+                <div class="orbit-scene">
+                    <div class="orbit-circle"></div>
+                    <div class="orbit-circle second"></div>
+                    <div class="orbit-center"> ● </div>
+                    <div class="orbit-dot"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ARTICLE 2: FIRST LAW -->
+
+        <section class="article reverse">
+
+            <div class="article-text">
+
+                <div class="article-number">ARTICLE 02 • NEWTON'S LAWS</div>
+
+                <h2>Newton's First Law of Motion</h2>
+
+                <p>
+                    Imagine sitting in a moving bus. When the driver
+                    suddenly applies the brakes, your body tends to move
+                    forward. But why does that happen? This is where
+                    Newton's First Law comes in!
+                </p>
+
+                <div class="more-text">
+
+                    <p>
+                        Newton's First Law states that an object remains
+                        at rest or continues moving in a straight line
+                        at a constant speed unless acted upon by an
+                        unbalanced external force.
+                    </p>
+
+                    <p>
+                        This tendency of objects to resist changes in
+                        their state of motion is called <strong><i>inertia</i></strong>.
+                        For example, a football lying on the ground will
+                        remain still until someone kicks it. Similarly,
+                        a moving bicycle slows down because of forces
+                        such as friction and air resistance.
+                    </p>
+
+                    <p>
+                        In simple words, objects do not change their
+                        motion on their own. A force is needed to
+                        change it.
+                    </p>
+                    <p>
+                        WANNA LEARN MORE? CLICK <a href="https://youtu.be/1XSyyjcEHo0?si=t10EQPhbvBP1WPMI" target="_blank">HERE!!!</a>
+                    </p>
+                </div>
+
+                <a href="#" class="read-more">Read more →</a>
+
+            </div>
+
+
+            <div class="article-visual" >
+
+                <div class="inertia-scene">
+
+                    <div class="inertia-ball">⚽</div>
+
+                    <div class="inertia-ground"></div>
+
+                    <div class="inertia-caption">
+                        An object resists a change in motion
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ARTICLE 3: SECOND LAW -->
+
+        <section class="article">
+
+            <div class="article-text">
+
+                <div class="article-number">ARTICLE 03 • NEWTON'S LAWS</div>
+
+                <h2>Newton's Second Law of Motion</h2>
+
+                <p>
+                    Why is it easier to push an empty shopping trolley
+                    than a fully loaded one? And why does a harder push
+                    make an object speed up more? Newton's Second Law
+                    explains this relationship!
+                </p>
+
+                <div class="more-text">
+
+                    <p>
+                        Newton's Second Law explains how the acceleration
+                        of an object depends on the net force acting on it
+                        and its mass. A greater net force produces greater
+                        acceleration when the mass stays the same.
+                    </p>
+
+                    <p>
+                        However, if the same force is applied to two
+                        objects, the object with less mass will have
+                        greater acceleration. This is why an empty
+                        trolley is easier to accelerate than a loaded one.
+                    </p>
+
+                    <p>
+                        This law is commonly written as F = ma, where
+                        F represents net force, m represents mass,
+                        and a represents acceleration.
+                    </p>
+<p>
+                        WANNA LEARN MORE? CLICK <a href="https://youtu.be/xzA6IBWUEDE?si=u-74oxL7hKDlWTaO" target="_blank">HERE!!!</a>
+                    </p>
+                </div>
+
+                <a href="#" class="read-more">Read more →</a>
+
+            </div>
+
+
+            <div class="article-visual" style="background:#ffe0ef;">
+                <img src="Animated Box Push Sequence.gif" alt="Apple" style="width: 300px; height: 300px; margin-bottom: 15px;">
+            </div> 
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ARTICLE 4: THIRD LAW -->
+
+        <section class="article reverse">
+
+            <div class="article-text">
+
+                <div class="article-number">ARTICLE 04 • NEWTON'S LAWS</div>
+
+                <h2>Newton's Third Law of Motion</h2>
+
+                <p>
+                    Have you ever wondered how a rocket moves upwards
+                    into space? It may seem like magic, but it is
+                    actually an amazing example of Newton's Third Law!
+                </p>
+
+                <div class="more-text">
+
+                    <p>
+                        Newton's Third Law states that for every action,
+                        there is an equal and opposite reaction.
+                        This means that forces always occur in pairs.
+                    </p>
+
+                    <p>
+                        When a rocket releases hot gases downwards,
+                        the gases exert an equal and opposite force
+                        on the rocket, pushing it upwards. The two
+                        forces act on different objects, which is
+                        why they do not cancel each other out.
+                    </p>
+
+                    <p>
+                        We can also see this law when we walk. Our feet
+                        push the ground backwards, and the ground pushes
+                        us forwards. This interaction helps us move!
+                    </p>
+<p>
+                        WANNA LEARN MORE? CLICK <a href="https://youtu.be/y61_VPKH2B4?si=tE8m0goM0fp_m7tr" target="_blank">HERE!!!</a>
+                    </p>
+                </div>
+
+                <a href="#" class="read-more">Read more →</a>
+
+            </div>
+
+
+            
+            <div class="article-visual" style="background:#ffe0ef;">
+                <img src="Rocket Launch Animation Frames.gif" alt="Apple" style="width: 300px; height: 300px; margin-bottom: 15px;">
+            </div> 
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>Keep questioning. Keep exploring. Keep learning! 💜</p>
+        <p>Curious Minds</p>
+    </footer>
+
+
+
+    <!-- READ MORE FUNCTION -->
+
+    <script>
+
+        const readLinks = document.querySelectorAll(".read-more");
+
+        readLinks.forEach(link => {
+
+            link.addEventListener("click", function(event) {
+
+                event.preventDefault();
+
+                const articleText = this.previousElementSibling;
+
+                articleText.classList.toggle("show");
+
+                if (articleText.classList.contains("show")) {
+                    this.textContent = "Read less ↑";
+                } else {
+                    this.textContent = "Read more →";
+                }
+
+            });
+
+        });
+
+    </script>
+ 
+<style>
+    
+/* =================================
+   PHYSICS PAGE
+================================= */
+
+
+/* PHYSICS HERO */
+
+.physics-hero {
+    min-height: 520px;
+
+    background:
+        radial-gradient(circle at 10% 20%, #f6b6e9, transparent 30%),
+        radial-gradient(circle at 90% 80%, #aaf58b, transparent 30%),
+        linear-gradient(135deg, #dfc5ff, #f4d9f5, #c9f5d0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
+}
+
+.physics-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.physics-label {
+    color: #579438;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.physics-hero h1 {
+    font-family: 'Kalam', cursive;
+    font-size: 85px;
+    line-height: 1.1;
+    color: #7026b5;
+    text-shadow: 3px 4px white;
+}
+
+.physics-hero h1 span {
+    color: #69b833;
+}
+
+.physics-hero-content > p:not(.physics-label) {
+    color: #665477;
+    font-size: 16px;
+    margin-top: 15px;
+    max-width: 500px;
+}
+
+.physics-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 32px;
+    background-color: #8435c9;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 5px 0 #59238a;
+    transition: 0.3s;
+}
+
+.physics-button:hover {
+    background-color: #68b82f;
+    transform: translateY(-4px);
+}
+
+
+/* PHYSICS DECORATIONS */
+
+.physics-decoration {
+    position: absolute;
+    font-size: 65px;
+}
+
+.apple {
+    left: 15%;
+    top: 20%;
+    transform: rotate(-15deg);
+}
+
+.star-one {
+    right: 18%;
+    top: 15%;
+    color: #ffbd21;
+}
+
+.atom-one {
+    right: 13%;
+    bottom: 15%;
+    color: #70ae4c;
+    font-size: 85px;
+}
+
+.star-two {
+    left: 23%;
+    bottom: 15%;
+    color: #a45bd2;
+    font-size: 50px;
+}
+
+
+/* PHYSICS INTRODUCTION */
+
+.physics-intro {
+    padding: 90px 20px;
+    background-color: #fffdf5;
+    text-align: center;
+}
+
+.physics-intro h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 38px;
+    color: #7026b5;
+    margin-bottom: 35px;
+}
+
+.physics-intro-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 40px;
+    background-color: #f0e5ff;
+    border: 3px solid #d4b5f4;
+    border-radius: 25px;
+}
+
+.intro-symbol {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.physics-intro-box p {
+    font-size: 15px;
+    line-height: 2;
+    color: #665477;
+    margin-bottom: 15px;
+}
+
+.physics-intro h3 {
+    font-family: 'Kalam', cursive;
+    font-size: 24px;
+    color: #65a53c;
+    margin-top: 30px;
+}
+
+
+/* PHYSICS TOPICS */
+
+.physics-topics {
+    padding: 100px 7%;
+    background-color: #f7f5ff;
+    text-align: center;
+}
+
+.topics-heading {
+    margin-bottom: 50px;
+}
+
+.topics-heading h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 40px;
+    color: #7026b5;
+    margin-bottom: 10px;
+}
+
+.topics-heading > p:last-child {
+    color: #766783;
+}
+
+
+/* TOPIC GRID */
+
+.physics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+/* TOPIC CARDS */
+
+.physics-topic-card {
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 30px 25px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+    border: 3px solid transparent;
+}
+
+.physics-topic-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* TOPIC CARD COLOURS */
+
+.motion {
+    background-color: #eadbff;
+    border-color: #c9a6f5;
+}
+
+.force {
+    background-color: #e1f7ce;
+    border-color: #a9df7e;
+}
+
+.gravity {
+    background-color: #ffe0ef;
+    border-color: #f5b1d2;
+}
+
+.energy {
+    background-color: #fff0c9;
+    border-color: #f5d77f;
+}
+
+.light {
+    background-color: #d8f4f1;
+    border-color: #a0ddd4;
+}
+
+.sound {
+    background-color: #e4dcff;
+    border-color: #b7a9f2;
+}
+
+
+/* TOPIC TEXT */
+
+.topic-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.physics-topic-card h3 {
+    font-family: 'Kalam', cursive;
+    font-size: 27px;
+    color: #51247c;
+    margin-bottom: 10px;
+}
+
+.physics-topic-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #62566c;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.physics-topic-card span {
+    font-size: 13px;
+    font-weight: 700;
+    color: #7026b5;
+}
+
+
+/* FUN FACT SECTION */
+
+.physics-fact {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #d8f5c5, #e9d7ff);
+    text-align: center;
+}
+
+.fact-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.physics-fact h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 38px;
+    color: #7026b5;
+    margin-bottom: 20px;
+}
+
+.physics-fact p:not(.section-label) {
+    font-size: 15px;
+    line-height: 2;
+    color: #62566c;
+}
+
+.fact-emoji {
+    font-size: 55px;
+    margin-top: 20px;
+}
+
+
+/* PHYSICS RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+
+    .physics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .physics-hero h1 {
+        font-size: 70px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .physics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .physics-hero h1 {
+        font-size: 60px;
+    }
+
+    .physics-decoration {
+        opacity: 0.35;
+    }
+
+    .physics-intro h2,
+    .topics-heading h2,
+    .physics-fact h2 {
+        font-size: 30px;
+    }
+
+    .physics-intro-box {
+        padding: 25px;
+    }
+
+}
+
+</style>
+</body>
+</html>

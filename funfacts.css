@@ -1,0 +1,651 @@
+
+/* NAVIGATION */
+
+.fun-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 18px;
+    flex-wrap: wrap;
+}
+
+.fun-nav a {
+    color: #563078;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.fun-nav a:hover,
+.fun-nav a.active {
+    color: #8a43b5;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+/* HEADER */
+
+.fun-header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 75px 20px 85px;
+    background: linear-gradient(
+        135deg,
+        #f2c9f5,
+        #d8b9ff,
+        #fff0c9
+    );
+}
+
+.fun-small-heading {
+    color: #76508e;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.fun-header h1 {
+    color: #7026b5;
+    font-size: clamp(45px, 9vw, 90px);
+    letter-spacing: 4px;
+    margin: 12px 0;
+    font-weight: 900;
+}
+
+.fun-tagline {
+    color: #634477;
+    font-size: 18px;
+}
+
+.fun-decoration {
+    position: absolute;
+    font-size: 35px;
+    animation: fun-float 4s ease-in-out infinite;
+}
+
+.fun-decor-one {
+    left: 12%;
+    top: 25%;
+}
+
+.fun-decor-two {
+    right: 13%;
+    top: 22%;
+    animation-delay: 1s;
+}
+
+.fun-decor-three {
+    left: 25%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.fun-decor-four {
+    right: 25%;
+    bottom: 18%;
+    animation-delay: 1.5s;
+}
+
+@keyframes fun-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+
+/* MAIN CONTAINER */
+
+.fun-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 40px 25px;
+}
+
+
+/* INTRO */
+
+.fun-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto 65px;
+}
+
+.fun-intro h2 {
+    color: #7026b5;
+    font-size: 32px;
+}
+
+.fun-intro p {
+    color: #555;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.fun-intro-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.fun-intro-decoration span {
+    animation: fun-float 3s ease-in-out infinite;
+}
+
+.fun-intro-decoration span:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.fun-intro-decoration span:nth-child(3) {
+    animation-delay: 2s;
+}
+
+
+/* ARTICLE LAYOUT */
+
+.fun-article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+    margin: 65px 0;
+}
+
+.fun-article.reverse {
+    flex-direction: row-reverse;
+}
+
+.fun-content {
+    flex: 1;
+}
+
+.fun-number {
+    color: #8b58a8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.fun-content h2 {
+    color: #7026b5;
+    font-size: 29px;
+    margin: 12px 0;
+}
+
+.fun-content p {
+    color: #555;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+
+/* READ MORE */
+
+.fun-extra {
+    display: none;
+}
+
+.fun-extra.show {
+    display: block;
+    animation: fun-appear 0.4s ease;
+}
+
+@keyframes fun-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fun-read-more {
+    display: inline-block;
+    color: #478b43;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.fun-read-more:hover {
+    color: #7026b5;
+    transform: translateX(5px);
+}
+
+
+/* VISUAL PANELS */
+
+.fun-visual {
+    flex: 1;
+    min-height: 290px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.fun-visual-label {
+    color: #73528b;
+    font-size: 13px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+/* FACT 1: LIGHTNING */
+
+.lightning-visual {
+    background: linear-gradient(
+        145deg,
+        #e3dafa,
+        #c9dcf5
+    );
+}
+
+.storm-cloud {
+    font-size: 100px;
+    position: absolute;
+    top: 15px;
+    animation: cloud-float 4s ease-in-out infinite;
+}
+
+.lightning-bolt {
+    font-size: 90px;
+    position: relative;
+    margin-top: 50px;
+    animation: lightning-flash 2.5s infinite;
+}
+
+.lightning-ground {
+    font-size: 35px;
+    position: absolute;
+    bottom: 25px;
+    left: 20%;
+}
+
+@keyframes cloud-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes lightning-flash {
+    0%, 45%, 55%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(1.15);
+    }
+}
+
+
+/* FACT 2: WATER */
+
+.water-visual {
+    background: linear-gradient(
+        145deg,
+        #d9edff,
+        #e4dcfa
+    );
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.water-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.water-state > div {
+    font-size: 55px;
+    animation: water-bob 3s ease-in-out infinite;
+}
+
+.water-state:nth-child(2) > div {
+    animation-delay: 1s;
+}
+
+.water-state:nth-child(3) > div {
+    animation-delay: 2s;
+}
+
+.water-state span {
+    color: #665180;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+@keyframes water-bob {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* FACT 3: PLANTS */
+
+.plant-visual {
+    background: linear-gradient(
+        145deg,
+        #e2f1d9,
+        #f4e8c9
+    );
+}
+
+.plant-sun {
+    position: absolute;
+    right: 15%;
+    top: 15%;
+    font-size: 45px;
+    animation: sun-turn 8s linear infinite;
+}
+
+.venus-plant {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.plant-stem {
+    width: 12px;
+    height: 100px;
+    background: #68b82f;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 15px;
+}
+
+.flytrap {
+    font-size: 70px;
+    position: relative;
+    z-index: 1;
+    animation: plant-sway 3s ease-in-out infinite;
+}
+
+.trap-left {
+    transform: rotate(-25deg);
+}
+
+.trap-right {
+    transform: rotate(25deg) scaleX(-1);
+    animation-delay: 1s;
+}
+
+.plant-pot {
+    position: absolute;
+    bottom: -25px;
+    font-size: 50px;
+}
+
+@keyframes plant-sway {
+    0%, 100% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes sun-turn {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* FACT 4: SPACE */
+
+.space-visual {
+    background: linear-gradient(
+        145deg,
+        #30265c,
+        #55418c,
+        #29284e
+    );
+}
+
+.space-visual .fun-visual-label {
+    color: #f2dfff;
+}
+
+.space-galaxy {
+    font-size: 100px;
+    animation: galaxy-turn 15s linear infinite;
+}
+
+.space-sun {
+    position: absolute;
+    font-size: 45px;
+    right: 15%;
+    bottom: 20%;
+    animation: sun-turn 10s linear infinite;
+}
+
+.space-star {
+    position: absolute;
+    color: #fff5c7;
+    animation: star-twinkle 2s ease-in-out infinite;
+}
+
+.star-one {
+    top: 15%;
+    left: 20%;
+}
+
+.star-two {
+    top: 25%;
+    right: 25%;
+    animation-delay: 1s;
+}
+
+.star-three {
+    bottom: 20%;
+    left: 25%;
+    animation-delay: 1.5s;
+}
+
+@keyframes galaxy-turn {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes star-twinkle {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* RANDOM FACT SECTION */
+
+.random-fact-section {
+    text-align: center;
+    margin: 100px 0 60px;
+    padding: 45px 25px;
+    background: linear-gradient(
+        135deg,
+        #f2dafa,
+        #e3f1d9
+    );
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.random-fact-section h2 {
+    color: #7026b5;
+    font-size: 30px;
+}
+
+.random-fact-section > p {
+    color: #665477;
+    line-height: 1.8;
+}
+
+.random-fact-decoration {
+    font-size: 45px;
+    animation: fun-float 3s ease-in-out infinite;
+}
+
+.random-fact-card {
+    max-width: 600px;
+    min-height: 120px;
+    margin: 25px auto;
+    padding: 25px;
+    background: #ffffffb8;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.random-fact-icon {
+    font-size: 30px;
+}
+
+.random-fact-card p {
+    color: #59456e;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+#randomFactButton {
+    border: none;
+    background: #7026b5;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#randomFactButton:hover {
+    background: #68b82f;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px #7026b530;
+}
+
+
+/* DIVIDER */
+
+.fun-divider {
+    text-align: center;
+    color: #9b72b8;
+    letter-spacing: 8px;
+    margin: 50px 0;
+}
+
+
+/* FOOTER */
+
+.fun-footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #eee0f8;
+    color: #65427d;
+}
+
+.fun-footer p {
+    font-size: 16px;
+}
+
+.fun-footer span {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .fun-nav {
+        gap: 15px;
+    }
+
+    .fun-article,
+    .fun-article.reverse {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .fun-content,
+    .fun-visual {
+        width: 100%;
+    }
+
+    .fun-visual {
+        min-height: 260px;
+    }
+
+    .fun-header {
+        padding: 65px 15px;
+    }
+
+    .fun-header h1 {
+        font-size: 45px;
+    }
+
+    .fun-decoration {
+        font-size: 25px;
+    }
+
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fun-header *,
+    .fun-visual *,
+    .fun-intro-decoration *,
+    .random-fact-decoration {
+        animation: none !important;
+    }
+
+}
